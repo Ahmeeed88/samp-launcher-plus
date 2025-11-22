@@ -4,46 +4,65 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Aplikasi desktop launcher untuk SA-MP (San Andreas Multiplayer) yang elegan dan modern dengan fitur auto-update mod dan monitoring server real-time.
+🎮 **SAMP Launcher Plus** - Aplikasi desktop launcher untuk SA-MP (San Andreas Multiplayer) yang elegan dan modern dengan fitur auto-update mod dan monitoring server real-time.
 
-## 🚀 Quick Start
+## 🚀 **Quick Download & Install**
 
-### 📦 Download & Install
+### **Option 1: Download ZIP (Recommended)**
+1. Klik tombol hijau **"Code"** di atas
+2. Pilih **"Download ZIP"**
+3. Extract file ZIP ke folder Anda
+4. Ikuti instruksi instalasi di bawah
 
-#### Option 1: Download Release (Recommended)
-1. Go to [Releases Page](https://github.com/yourusername/samp-launcher-plus/releases)
-2. Download `SAMP-Launcher-Plus-Setup-1.0.0.exe`
-3. Run installer as Administrator
-4. Launch application from Desktop/Start Menu
-
-#### Option 2: Build from Source
+### **Option 2: Clone Repository**
 ```bash
-# Clone repository
 git clone https://github.com/yourusername/samp-launcher-plus.git
 cd samp-launcher-plus
-
-# Install dependencies
-npm install
-
-# Build application
-npm run tauri build
-
-# Find installer in: src-tauri/target/release/bundle/msi/
 ```
 
-## 🎯 Features
+## 📦 **Cara Install & Build**
 
-- **🎨 Modern UI** - Elegant dark theme with smooth animations
-- **📁 Smart Path Detection** - Automatic GTA SA folder validation
-- **🔄 Auto-Update System** - One-click mod updates with progress tracking
-- **📊 Real-time Monitoring** - Live server stats (players, ping, status)
-- **⚡ Fast Performance** - Native performance with Rust backend
-- **💾 Configuration Manager** - Persistent settings with auto-save
-- **🔔 Smart Notifications** - Contextual alerts for updates and errors
+### **Prerequisites**
+- Windows 10/11
+- Node.js 18+ 
+- Rust 1.70+ (untuk build)
 
-## 📸 Screenshots
+### **Installation Steps**
+```bash
+# 1. Install dependencies
+npm install
 
-### Main Interface
+# 2. Build aplikasi
+npm run tauri build
+
+# 3. Installer akan ada di:
+# src-tauri/target/release/bundle/msi/
+```
+
+### **Development Mode**
+```bash
+# Untuk development/testing
+npm run tauri dev
+```
+
+## 🎯 **Features Lengkap**
+
+### ✅ **Core Features**
+- **Modern UI** - Dark theme elegan dengan animasi smooth
+- **Smart Path Detection** - Auto-deteksi folder GTA San Andreas
+- **Real-time Server Monitoring** - Live stats (players, ping, status)
+- **Auto-Update System** - One-click mod update dengan progress
+- **Configuration Manager** - Save/load settings otomatis
+
+### ✅ **Technical Features**
+- **Rust Backend** - Native performance & security
+- **React Frontend** - Modern UI dengan TypeScript
+- **Cross-Platform** - Windows ready (Linux/macOS extensible)
+- **Small Size** - ~15MB installer
+- **No Dependencies** - Standalone executable
+
+## 📸 **Tampilan Aplikasi**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ ◼ ● ◭  SAMP Launcher Plus                                    │
@@ -68,30 +87,10 @@ npm run tauri build
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 🛠️ Tech Stack
+## ⚙️ **Konfigurasi**
 
-### Frontend
-- **React 18** with TypeScript
-- **Tailwind CSS** for elegant styling
-- **Lucide React** for modern icons
-- **Vite** for lightning-fast builds
-
-### Backend
-- **Rust** with Tauri framework
-- **reqwest** for HTTP operations
-- **zip** for file extraction
-- **serde** for JSON serialization
-
-### Features
-- File system operations
-- Process management
-- Network queries
-- Configuration persistence
-
-## ⚙️ Configuration
-
-### Environment Variables
-Create `.env` file:
+### **Environment Variables**
+Buat file `.env`:
 ```env
 # Server Configuration
 SERVER_IP=192.168.1.100
@@ -106,162 +105,111 @@ MOD_VERSION=1.2.3
 AUTO_UPDATE_MOD=true
 ```
 
-### Runtime Configuration
-Configuration is saved in:
+### **Runtime Config**
+Settings otomatis disimpan di:
 - **Windows**: `%APPDATA%/com.samplauncher.plus/launcher-config.json`
 
-## 🎮 How to Use
+## 🛠️ **Tech Stack**
 
-1. **First Setup**
-   - Launch "SAMP Launcher Plus"
-   - Click "Browse" to select GTA San Andreas folder
-   - Enter your SA-MP username
-   - Click "Join Server"
+### **Frontend**
+- **React 18** dengan TypeScript
+- **Tailwind CSS** untuk styling elegan
+- **Lucide React** untuk modern icons
+- **Vite** untuk fast builds
 
-2. **Daily Usage**
-   - Launcher auto-loads your settings
-   - Real-time server monitoring
-   - Quick access to all actions
-   - Background mod update checks
+### **Backend**
+- **Rust** dengan Tauri framework
+- **reqwest** untuk HTTP operations
+- **zip** untuk file extraction
+- **serde** untuk JSON serialization
 
-3. **Mod Updates**
-   - Automatic check on startup
-   - One-click download & install
-   - Progress indicators
-   - Version management
+## 🎮 **Cara Penggunaan**
 
-## 🔧 Development
+### **First Time Setup**
+1. Launch "SAMP Launcher Plus"
+2. Klik "Browse" pilih folder GTA San Andreas
+3. Masukkan username SA-MP
+4. Klik "Join Server"
 
-### Prerequisites
-- Node.js 18+
-- Rust 1.70+
-- Windows 10+ (for building)
+### **Daily Usage**
+- Launcher auto-load settings
+- Real-time server monitoring
+- Quick access ke semua actions
+- Background mod update checks
 
-### Setup
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/samp-launcher-plus.git
-cd samp-launcher-plus
+## 📁 **Struktur Project**
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run tauri dev
-
-# Build for production
-npm run tauri build
-```
-
-### Project Structure
 ```
 samp-launcher-plus/
-├── src/                     # React frontend
-│   ├── components/          # UI components
-│   ├── hooks/              # React hooks
-│   ├── types/              # TypeScript types
-│   └── utils/              # Utility functions
-├── src-tauri/              # Rust backend
-│   ├── src/                # Source code
-│   ├── Cargo.toml          # Rust dependencies
-│   └── tauri.conf.json     # Tauri config
-├── public/                 # Static assets
-└── docs/                   # Documentation
+├── 📁 src/                     # React frontend
+│   ├── components/              # UI components
+│   │   ├── Launcher.tsx        # Main interface
+│   │   ├── TitleBar.tsx        # Custom title bar
+│   │   ├── PathSelector.tsx    # GTA path browser
+│   │   ├── ServerInfoCard.tsx  # Server stats
+│   │   ├── UsernameInput.tsx   # Username field
+│   │   ├── ActionButtons.tsx   # Main buttons
+│   │   └── Notification.tsx    # Alert system
+│   ├── hooks/
+│   │   └── useLauncher.ts      # Main logic
+│   ├── types/
+│   │   └── index.ts            # TypeScript types
+│   ├── main.tsx                # App entry
+│   └── index.css               # Tailwind styles
+├── 📁 src-tauri/               # Rust backend
+│   ├── src/
+│   │   ├── main.rs             # Entry point
+│   │   └── lib.rs              # Core logic
+│   ├── Cargo.toml              # Rust deps
+│   └── tauri.conf.json         # Config
+├── 📄 package.json              # Node.js deps
+├── 📄 README.md                 # This file
+└── 📄 LICENSE                   # MIT License
 ```
 
-## 📦 Build & Release
+## 🔧 **Build Commands**
 
-### Build Commands
 ```bash
-# Development build
+# Development
 npm run tauri dev
 
-# Production build
+# Production Build
 npm run tauri build
 
-# Platform-specific builds
+# Platform-specific
 npm run tauri build -- --target x86_64-pc-windows-msvc
 ```
 
-### Release Artifacts
-- **Windows**: MSI installer (~15MB)
-- **Linux**: DEB package (~12MB) 
-- **macOS**: DMG image (~18MB)
+## 🐛 **Troubleshooting**
 
-## 🐛 Troubleshooting
+### **Common Issues**
+- **"gta_sa.exe not found"** → Pilih folder GTA SA yang benar
+- **"Failed to launch game"** → Run as Administrator
+- **"Server offline"** → Cek koneksi internet
+- **"Mod update failed"** → Cek disk space & internet
 
-### Common Issues
+## 📄 **License**
 
-**"gta_sa.exe not found"**
-- Ensure correct GTA SA folder selected
-- Verify gta_sa.exe exists in the folder
-- Run launcher as Administrator
+MIT License - lihat file [LICENSE](LICENSE) untuk detail.
 
-**"Failed to launch game"**
-- Check GTA SA installation integrity
-- Disable antivirus temporarily
-- Verify Windows Firewall settings
+## 🙏 **Credits**
 
-**"Server offline"**
-- Check internet connection
-- Verify server IP and port
-- Contact server administrator
-
-**"Mod update failed"**
-- Ensure sufficient disk space
-- Check internet connection
-- Try manual download from provided link
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-### Development Guidelines
-- Follow TypeScript best practices
-- Use Tailwind CSS for styling
-- Write meaningful commit messages
-- Include tests for new features
-- Update documentation
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Credits & Thanks
-
-- **[SA-MP Team](https://sa-mp.com/)** - San Andreas Multiplayer
-- **[Tauri](https://tauri.app/)** - Amazing Rust-based app framework
-- **[React](https://reactjs.org/)** - UI framework
-- **[Tailwind CSS](https://tailwindcss.com/)** - CSS framework
-- **[Lucide](https://lucide.dev/)** - Beautiful icon library
-
-## 📞 Support & Community
-
-- 📧 Email: support@samplauncher.plus
-- 💬 Discord: [Join our community](https://discord.gg/samp)
-- 🐛 Issues: [Report bugs](https://github.com/yourusername/samp-launcher-plus/issues)
-- 📖 Wiki: [Documentation](https://github.com/yourusername/samp-launcher-plus/wiki)
-
-## 🗺️ Roadmap
-
-### v1.1 (Planned)
-- [ ] System tray integration
-- [ ] Multiple server profiles
-- [ ] In-game overlay
-- [ ] Discord rich presence
-
-### v1.2 (Future)
-- [ ] Linux/macOS support
-- [ ] Plugin system
-- [ ] Custom themes
-- [ ] Server browser
+- [SA-MP Team](https://sa-mp.com/) - San Andreas Multiplayer
+- [Tauri](https://tauri.app/) - Rust app framework  
+- [React](https://reactjs.org/) - UI framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 
 ---
 
-**⭐ Star this repository if you find it helpful!**
+## 🎯 **Download Sekarang!**
 
-**Made with ❤️ for the SA-MP Community**
+**Klik "Code" → "Download ZIP" untuk download project lengkap!**
+
+**Made with ❤️ for SA-MP Community**
+
+---
+
+### **📞 Support**
+- 📧 Email: support@samplauncher.plus
+- 💬 Discord: [Join Community](https://discord.gg/samp)
+- 🐛 Issues: [Report Bug](https://github.com/yourusername/samp-launcher-plus/issues)
