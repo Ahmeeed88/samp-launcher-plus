@@ -37,15 +37,6 @@ async fn check_gta_path(path: String) -> Result<bool, String> {
     Ok(gta_exe.exists())
 }
 
-// Browse for folder
-#[tauri::command]
-async fn browse_folder() -> Result<Option<String>, String> {
-    use tauri_plugin_dialog::DialogExt;
-    
-    // This will be handled by the frontend using the dialog plugin
-    Ok(None)
-}
-
 // Launch GTA SA with SA-MP parameters
 #[tauri::command]
 async fn launch_gta_sa(
@@ -317,9 +308,6 @@ fn extract_zip(zip_path: &PathBuf, extract_to: &PathBuf) -> Result<(), String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_dialog::init())
-        .plugin(tauri_plugin_fs::init())
-        .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
             check_gta_path,
             launch_gta_sa,
